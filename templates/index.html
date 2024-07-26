@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugün Türkiye'de Neler Oluyor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Bugün Türkiye'de Neler Oluyor</h1>
+        {% if news %}
+            {% for item in news %}
+                <div class="card my-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item[2] }}</h5>
+                        <p class="card-text">{{ item[3] }}</p>
+                        <p class="card-text"><small class="text-muted">{{ item[1] }}</small></p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No news available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
